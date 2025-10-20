@@ -30,8 +30,8 @@ El objetivo es **identificar las zonas más vulnerables a las heladas** y propon
 - **Temperatura mínima en el Perú (raster TIFF)**  
   [https://drive.google.com/drive/folders/1kf8Kfuo3EkmcPfQMIyVKPug0FwnzTNHP](https://drive.google.com/drive/folders/1kf8Kfuo3EkmcPfQMIyVKPug0FwnzTNHP)
 
-- **Distritos en formato GeoJSON (Capa vectorial)**  
-  [https://raw.githubusercontent.com/juaneladio/peru-geojson/master/peru_distrital_simple.geojson](https://raw.githubusercontent.com/juaneladio/peru-geojson/master/peru_distrital_simple.geojson)
+- **Distritos (Capa vectorial)**  
+  [https://github.com/jotikeng1/Raster_Analysis_Public_Policy_Streamlit/raw/refs/heads/main/data/shape_file/DISTRITOS.shp]("https://github.com/jotikeng1/Raster_Analysis_Public_Policy_Streamlit/raw/refs/heads/main/data/shape_file/DISTRITOS.shp)
 
 - **Plan Multisectorial ante Heladas y Friaje 2022 – 2024**  
   [https://sigrid.cenepred.gob.pe/sigridv3/storage/biblioteca/15522_plan-multisectorial-ante-heladas-y-friajes-2022-2024.pdf](https://sigrid.cenepred.gob.pe/sigridv3/storage/biblioteca/15522_plan-multisectorial-ante-heladas-y-friajes-2022-2024.pdf)
@@ -301,7 +301,7 @@ with tab2:
     with colp1:
         bins = st.slider("N° de bins para el histograma", 10,20,40)
     with colp2:
-        top_k = st.slider("Top K distritos", 30, 15)
+        top_k = st.slider("Top 15 distritos", 15)
 
     # ======================
     # 1) Histograma
@@ -328,7 +328,7 @@ with tab2:
 
     # Top menores
     with c1:
-        st.markdown("#### Top k distritos con **menor** Tmin promedio")
+        st.markdown("#### Top 15 distritos con **menor** Tmin promedio")
         top_low = gdf.sort_values(by="tmin_promedio_total").head(top_k)
         fig, ax = plt.subplots(figsize=(11, 6))
         ax = sns.barplot(data=top_low, x="DISTRITO", y="tmin_promedio_total", color="steelblue", ax=ax)
@@ -344,7 +344,7 @@ with tab2:
 
     # Top mayores
     with c2:
-        st.markdown("#### Top k distritos con **mayor** Tmin promedio")
+        st.markdown("#### Top 15 distritos con **mayor** Tmin promedio")
         top_high = gdf.sort_values(by="tmin_promedio_total", ascending=False).head(top_k)
         fig, ax = plt.subplots(figsize=(11, 6))
         ax = sns.barplot(data=top_high, x="DISTRITO", y="tmin_promedio_total", color="steelblue", ax=ax)
