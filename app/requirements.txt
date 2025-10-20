@@ -1,0 +1,22 @@
+# Core scientific libraries
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+plotly
+
+# Streamlit framework
+streamlit
+
+# Spatial and raster processing
+geopandas
+rasterio
+rasterstats
+
+# Text processing
+unidecode
+
+# Utilities
+pathlib
+
