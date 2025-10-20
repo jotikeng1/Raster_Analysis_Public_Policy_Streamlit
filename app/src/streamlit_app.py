@@ -51,6 +51,11 @@ En este proyecto se integran **herramientas de análisis geoespacial (Raster + G
 # Ruta absoluta robusta basada en este archivo
 archivo = Path(__file__).resolve().parents[2] / "data" / "tmin_raster.tif"
 
+# Ruta de distritos geojson
+shapefile_path = os.path.join("https://github.com/jotikeng1/Raster_Analysis_Public_Policy_Streamlit/raw/refs/heads/main/data/shape_file/DISTRITOS.shp")
+gdf = gpd.read_file(shapefile_path)
+
+
 
 # --- Funciones de Carga de Datos (con caché para velocidad) ---
 @st.cache_data
@@ -88,22 +93,10 @@ with rio.open(archivo) as src:
 
 @st.cache_data
 def load_map_data():
-    map_url = "https://raw.githubusercontent.com/juaneladio/peru-geojson/master/peru_distrital_simple.geojson"
-    df_mapa = gpd.read_file(map_url)
-    return df_mapa
+    gdf = gpd.read_file(shapefile_path)
+    return gdf
 
 
-# --- Carga Principal de Datos ---
-with st.spinner('Cargando datos y mapas...'):
-    df_tmin_raster = load_data()
-    df_mapa_distritos = load_map_data()
-
-# --- ANÁLISIS ESTÁTICO POR DISTRITO ---
-
-
-# 3.1 Preparaciòn de la Data
-shapefile_path = os.path.join("..", "data", "shape_file", "DISTRITOS.shp")
-gdf = gpd.read_file(shapefile_path)
 
 # promedio de temperaturas minimas en cada distrito 
 promedios = []
