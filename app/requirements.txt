@@ -1,4 +1,4 @@
-# Core scientific libraries
+# --- Core scientific libraries ---
 numpy
 pandas
 scipy
@@ -6,17 +6,15 @@ matplotlib
 seaborn
 plotly
 
-# Streamlit framework
-streamlit
+# --- Streamlit framework ---
+streamlit>=1.36
 
-# Spatial and raster processing
-geopandas
-rasterio
-rasterstats
+# --- Spatial and raster processing ---
+geopandas>=0.14
+pyogrio>=0.7
+rasterio>=1.3.9
+rasterstats>=0.19
 
-# Text processing
+# --- Text processing ---
 unidecode
-
-# Utilities
-pathlib
 

@@ -41,7 +41,7 @@ El objetivo es **identificar las zonas más vulnerables a las heladas** y propon
 Las **heladas** son uno de los fenómenos climáticos más severos que afectan al altiplano peruano, generando pérdidas agrícolas, afectaciones a la ganadería y problemas de salud en comunidades vulnerables.  
 El estudio de la **temperatura mínima del aire** permite identificar los territorios con mayor exposición, fortalecer la gestión preventiva y orientar **acciones multisectoriales** en salud, vivienda y desarrollo social.  
 
-En este proyecto se integran **herramientas de análisis geoespacial (Raster + GeoJSON)** con información de políticas públicas vigentes, buscando aportar evidencia para la **planificación territorial adaptativa frente al cambio climático**.
+En este proyecto se integran **herramientas de análisis geoespacial (Raster + GeoJSON)** con información de políticas públicas vigentes, buscando aportar evidencia para la **prevención adaptativa frente al cambio climático**.
 """)
 
 
